@@ -202,7 +202,7 @@ Atualize o footer e meta tags:
 No `<head>`, procure por:
 
 ```html
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7059730627018047"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"></script>
 ```
 
 Substitua `ca-pub-XXXXX` pelo seu Client ID do AdSense.
