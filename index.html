@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,7 +9,7 @@
     <!-- Meta Tags SEO -->
     <meta name="description" content="Lotofácil Pro é um gerador inteligente de jogos para Lotofácil com desdobramento matemático. Crie combinações estratégicas de 15 números (01-25) e gere 9 jogos únicos baseados em critérios otimizados. Desenvolvido por André Miranda com algoritmos avançados para maximizar suas chances.">
     <meta name="keywords" content="lotofácil, gerador lotofácil, jogos lotofácil, desdobramento lotofácil, combinações lotofácil, números lotofácil, estratégia lotofácil, André Miranda, gerador de números, loteria">
-    <meta name="author" content="André Miranda - 63 9 9242-8022">
+    <meta name="author" content="André Miranda">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Portuguese">
     <meta name="revisit-after" content="7 days">
@@ -21,7 +22,7 @@
     <meta property="og:description" content="Gerador inteligente de jogos para Lotofácil com desdobramento matemático. Crie combinações estratégicas e gere 9 jogos únicos otimizados.">
     <meta property="og:site_name" content="Lotofácil Pro">
     <meta property="og:locale" content="pt_BR">
-    <meta property="article:author" content="André Miranda - 63 9 9242-8022">
+    <meta property="article:author" content="André Miranda">
     <meta property="article:published_time" content="2025-01-01T00:00:00-03:00">
     <meta property="article:modified_time" content="2025-01-01T00:00:00-03:00">
     <meta property="article:section" content="Ferramentas">
@@ -52,7 +53,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%2393006C'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23E0AFFF'/%3E%3C/svg%3E" type="image/svg+xml">
 
     <!-- Scripts de Anúncios Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7059730627018047" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -82,6 +83,9 @@
             --loto-purple: #93006C;
             --loto-accent: #E0AFFF;
             --loto-dark: #610047;
+            --loto-light: #f8f0ff;
+            --loto-number-main: #B23A96; /* Cor mais forte para números do jogo principal */
+            --loto-number-extra: #93006C; /* Cor normal para números extras */
             --bg: #f0f2f5;
             --text: #1a1a1a;
             --white: #ffffff;
@@ -277,13 +281,29 @@
             border-color: var(--loto-accent);
         }
 
+        /* Estilos diferenciados para os números dos jogos */
         .num-badge {
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, var(--loto-purple), var(--loto-dark));
             color: var(--white); border-radius: 50%; font-weight: 800; 
             font-size: 16px; border: 2px solid var(--loto-accent); transition: var(--transition);
         }
-        .card-jogo:hover .num-badge { transform: scale(1.1); border-color: var(--white); box-shadow: 0 0 10px rgba(224, 175, 255, 0.5); }
+        
+        /* Números que vieram do jogo principal (9 números) - COR MAIS FORTE */
+        .num-badge.main-number {
+            background: linear-gradient(135deg, var(--loto-number-main), #C44BA8);
+            border-color: #D95FC4;
+            box-shadow: 0 2px 5px rgba(178, 58, 150, 0.3);
+        }
+        
+        /* Números que são extras (6 números) - COR NORMAL */
+        .num-badge.extra-number {
+            background: linear-gradient(135deg, var(--loto-number-extra), var(--loto-dark));
+            border-color: var(--loto-accent);
+        }
+        
+        .card-jogo:hover .num-badge { transform: scale(1.1); border-color: var(--white); }
+        .card-jogo:hover .num-badge.main-number { box-shadow: 0 0 12px rgba(212, 95, 196, 0.6); }
+        .card-jogo:hover .num-badge.extra-number { box-shadow: 0 0 10px rgba(224, 175, 255, 0.5); }
 
         /* Rodapé Estilizado e Compacto */
         footer {
@@ -372,6 +392,38 @@
             align-items: center;
             justify-content: center;
         }
+        
+        /* Instrução visual sobre as cores dos números */
+        .color-legend {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .legend-color.main {
+            background: linear-gradient(135deg, var(--loto-number-main), #C44BA8);
+        }
+        
+        .legend-color.extra {
+            background: linear-gradient(135deg, var(--loto-number-extra), var(--loto-dark));
+        }
 
         /* Animações de Entrada */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -408,6 +460,14 @@
             .main-button {
                 padding: 18px;
                 font-size: 15px;
+            }
+            
+            .color-legend {
+                gap: 10px;
+            }
+            
+            .legend-item {
+                font-size: 10px;
             }
         }
         
@@ -446,16 +506,17 @@
             <a href="#" onclick="resetarJogos()">Resetar Jogos</a>
             <a href="#" onclick="exportarJogos()">Exportar Jogos</a>
             <a href="#" onclick="copiarJogos()">Copiar Jogos</a>
+            <a href="#" onclick="instalarPWA()">Instalar App</a>
         </div>
     </nav>
 
     <!-- Banner de Instalação PWA -->
     <div id="pwaInstallBanner" class="pwa-install-banner">
         <div class="pwa-install-banner-content">
-            <h3>Instalar Lotofácil Pro</h3>
-            <p>Instale como aplicativo para acesso rápido e offline!</p>
+            <h3>📱 Instalar Lotofácil Pro</h3>
+            <p>Tenha acesso rápido e use offline! (Windows/Android)</p>
         </div>
-        <button id="pwaInstallButton" class="pwa-install-button">INSTALAR</button>
+        <button id="pwaInstallButton" class="pwa-install-button">INSTALAR AGORA</button>
         <button id="pwaDismissButton" class="pwa-dismiss-button">×</button>
     </div>
 
@@ -464,6 +525,18 @@
 
         <div class="grid-input" id="inputGrid">
             <!-- Inputs serão gerados dinamicamente via Script -->
+        </div>
+        
+        <!-- Legenda das cores dos números -->
+        <div class="color-legend" id="colorLegend" style="display: none;">
+            <div class="legend-item">
+                <div class="legend-color main"></div>
+                <span>Números do jogo principal (9)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color extra"></div>
+                <span>Números extras (6)</span>
+            </div>
         </div>
         
         <div class="button-group">
@@ -484,137 +557,8 @@
     <footer>
         <p>&copy; 2025 Lotofácil Pro - André Miranda</p>
         <p>Geração baseada em critérios de desdobramento matemático.</p>
-        <strong>Desenvolvido por André Miranda - (63) 9 9242-8022</strong>
+        <strong>Desenvolvido por André Miranda</strong>
     </footer>
-
-    <!-- Manifest PWA Inline -->
-    <script type="application/manifest+json" id="manifestData">
-    {
-      "name": "Lotofácil Pro",
-      "short_name": "LotofácilPro",
-      "description": "Gerador inteligente de jogos para Lotofácil com desdobramento matemático",
-      "start_url": "./",
-      "display": "standalone",
-      "background_color": "#f0f2f5",
-      "theme_color": "#93006C",
-      "orientation": "portrait-primary",
-      "icons": [
-        {
-          "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%2393006C'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23E0AFFF'/%3E%3C/svg%3E",
-          "sizes": "100x100",
-          "type": "image/svg+xml",
-          "purpose": "any maskable"
-        },
-        {
-          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEX////09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSD5Dq5AAABW0lEQVR4nO3YS27DMAwEwJGk/39cB0WOxQF6p2XeMqIAnhVl7eY8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMD/GWNuzlq7+2qtNWfNeey9n3vv1e/m9bn3fr69ft4/L18/5wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA3zYAAAD//9gVX+3M9g1xAAAAAElFTkSuQmCC",
-          "sizes": "512x512",
-          "type": "image/png"
-        }
-      ]
-    }
-    </script>
-
-    <!-- Service Worker Inline -->
-    <script id="serviceWorkerScript">
-    // Cria um Blob com o código do Service Worker
-    const serviceWorkerCode = `
-    const CACHE_NAME = 'lotofacil-pro-v1';
-    const urlsToCache = [
-      './',
-      './index.html'
-    ];
-
-    self.addEventListener('install', event => {
-      console.log('Service Worker: Installing...');
-      event.waitUntil(
-        caches.open(CACHE_NAME)
-          .then(cache => {
-            console.log('Service Worker: Caching App Shell');
-            return cache.addAll(urlsToCache);
-          })
-          .then(() => self.skipWaiting())
-      );
-    });
-
-    self.addEventListener('activate', event => {
-      console.log('Service Worker: Activating...');
-      event.waitUntil(
-        caches.keys().then(cacheNames => {
-          return Promise.all(
-            cacheNames.map(cacheName => {
-              if (cacheName !== CACHE_NAME) {
-                console.log('Service Worker: Removing Old Cache', cacheName);
-                return caches.delete(cacheName);
-              }
-            })
-          );
-        })
-      );
-      return self.clients.claim();
-    });
-
-    self.addEventListener('fetch', event => {
-      console.log('Service Worker: Fetching', event.request.url);
-      event.respondWith(
-        caches.match(event.request)
-          .then(response => {
-            if (response) {
-              console.log('Service Worker: Serving from Cache', event.request.url);
-              return response;
-            }
-            console.log('Service Worker: Fetching from Network', event.request.url);
-            return fetch(event.request)
-              .then(response => {
-                if(!response || response.status !== 200 || response.type !== 'basic') {
-                  return response;
-                }
-                const responseToCache = response.clone();
-                caches.open(CACHE_NAME)
-                  .then(cache => {
-                    cache.put(event.request, responseToCache);
-                  });
-                return response;
-              })
-              .catch(() => {
-                // Se falhar, retorna uma página offline
-                if (event.request.mode === 'navigate') {
-                  return caches.match('./');
-                }
-              });
-          })
-      );
-    });
-
-    self.addEventListener('message', event => {
-      if (event.data.action === 'skipWaiting') {
-        self.skipWaiting();
-      }
-    });
-    `;
-
-    // Registra o Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        // Cria um Blob com o código do Service Worker
-        const blob = new Blob([serviceWorkerCode], { type: 'application/javascript' });
-        const serviceWorkerURL = URL.createObjectURL(blob);
-        
-        navigator.serviceWorker.register(serviceWorkerURL)
-          .then(function(registration) {
-            console.log('Service Worker registrado com sucesso:', registration.scope);
-            
-            // Verifica se há uma nova versão do Service Worker
-            registration.addEventListener('updatefound', () => {
-              const newWorker = registration.installing;
-              console.log('Nova versão do Service Worker encontrada:', newWorker);
-            });
-          })
-          .catch(function(error) {
-            console.log('Falha ao registrar Service Worker:', error);
-          });
-      });
-    }
-    </script>
 
     <script>
         /**
@@ -622,32 +566,81 @@
          */
         const gridInput = document.getElementById('inputGrid');
         const resultadoArea = document.getElementById('resultado');
+        const colorLegend = document.getElementById('colorLegend');
         let historicoJogos = new Set();
         let contadorGrupos = 1;
         let contadorJogosTotal = 0;
         let deferredPrompt = null;
+        let jogoPrincipalAtual = []; // Armazena os números do jogo principal atual
 
         // PWA - Gerenciamento de Instalação
         const pwaInstallBanner = document.getElementById('pwaInstallBanner');
         const pwaInstallButton = document.getElementById('pwaInstallButton');
         const pwaDismissButton = document.getElementById('pwaDismissButton');
 
-        // Cria um link para o manifest
-        function setupManifest() {
-            const manifestContent = document.getElementById('manifestData').textContent;
-            const blob = new Blob([manifestContent], { type: 'application/manifest+json' });
-            const manifestURL = URL.createObjectURL(blob);
+        // Configuração do PWA
+        function setupPWA() {
+            // Cria manifest dinamicamente
+            const manifest = {
+                "name": "Lotofácil Pro",
+                "short_name": "Lotofácil Pro",
+                "description": "Gerador inteligente de jogos para Lotofácil com desdobramento matemático",
+                "start_url": window.location.href,
+                "display": "standalone",
+                "background_color": "#f0f2f5",
+                "theme_color": "#93006C",
+                "orientation": "portrait",
+                "icons": [
+                    {
+                        "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%2393006C'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23E0AFFF'/%3E%3C/svg%3E",
+                        "sizes": "192x192",
+                        "type": "image/svg+xml",
+                        "purpose": "any maskable"
+                    }
+                ]
+            };
             
-            // Cria um link para o manifest
+            // Cria link para manifest
+            const blob = new Blob([JSON.stringify(manifest)], { type: 'application/manifest+json' });
+            const manifestURL = URL.createObjectURL(blob);
             const link = document.createElement('link');
             link.rel = 'manifest';
             link.href = manifestURL;
             document.head.appendChild(link);
             
-            // Atualiza o theme-color meta tag
-            const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-            if (themeColorMeta) {
-                themeColorMeta.setAttribute('content', '#93006C');
+            // Registra service worker
+            if ('serviceWorker' in navigator) {
+                const swCode = `
+                self.addEventListener('install', (event) => {
+                    event.waitUntil(
+                        caches.open('lotofacil-pro-v1').then((cache) => {
+                            return cache.addAll([
+                                './',
+                                './index.html'
+                            ]);
+                        })
+                    );
+                });
+                
+                self.addEventListener('fetch', (event) => {
+                    event.respondWith(
+                        caches.match(event.request).then((response) => {
+                            return response || fetch(event.request);
+                        })
+                    );
+                });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swURL = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swURL)
+                    .then(registration => {
+                        console.log('Service Worker registrado com sucesso:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Falha ao registrar Service Worker:', error);
+                    });
             }
         }
 
@@ -658,13 +651,12 @@
                    document.referrer.includes('android-app://');
         }
 
-        // Mostra o banner de instalação após um delay
+        // Mostra o banner de instalação
         function showInstallBanner() {
-            // Só mostra se não estiver instalado e se o usuário ainda não rejeitou
             if (!isAppInstalled() && !localStorage.getItem('pwaDismissed')) {
                 setTimeout(() => {
                     pwaInstallBanner.classList.add('show');
-                }, 3000); // Mostra após 3 segundos
+                }, 2000);
             }
         }
 
@@ -674,21 +666,46 @@
             e.preventDefault();
             deferredPrompt = e;
             showInstallBanner();
-        });
-
-        // Evento de instalação
-        pwaInstallButton.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                console.log(`Usuário ${outcome} a instalação do PWA`);
-                if (outcome === 'accepted') {
-                    pwaInstallBanner.classList.remove('show');
-                    localStorage.setItem('pwaDismissed', 'true');
-                }
-                deferredPrompt = null;
+            
+            // Mostra também no menu
+            const installMenu = document.querySelector('#dropdown a[onclick="instalarPWA()"]');
+            if (installMenu) {
+                installMenu.style.display = 'block';
             }
         });
+
+        // Função para instalar PWA
+        function instalarPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Usuário aceitou a instalação do PWA');
+                        // Esconde o banner após instalação
+                        pwaInstallBanner.classList.remove('show');
+                        localStorage.setItem('pwaDismissed', 'true');
+                        
+                        // Mostra mensagem de sucesso
+                        alert('Lotofácil Pro está sendo instalado! Verifique sua área de trabalho ou tela inicial.');
+                    } else {
+                        console.log('Usuário recusou a instalação do PWA');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                // Se não houver prompt, tenta uma instalação alternativa
+                if (isAppInstalled()) {
+                    alert('Lotofácil Pro já está instalado!');
+                } else {
+                    alert('Para instalar: \n\nNo Chrome: Clique nos 3 pontos → "Instalar Lotofácil Pro"\nNo Edge: Clique nos 3 pontos → "Apps" → "Instalar este site como um aplicativo"\nNo Safari: Compartilhar → "Adicionar à Tela de Início"');
+                }
+            }
+            toggleMenu();
+        }
+
+        // Evento de instalação do botão
+        pwaInstallButton.addEventListener('click', instalarPWA);
 
         // Evento para fechar o banner
         pwaDismissButton.addEventListener('click', () => {
@@ -761,10 +778,10 @@
                 gridInput.appendChild(input);
             }
             
-            // Configura o manifest
-            setupManifest();
+            // Configura o PWA
+            setupPWA();
             
-            // Mostra banner de instalação após inicialização
+            // Mostra banner de instalação
             showInstallBanner();
         }
 
@@ -821,7 +838,6 @@
             
             // Sistema de fechamento 15/9/9 = 10
             // Gera 10 jogos de 15 números com garantia de pelo menos 1 com 9 acertos
-            // Este é um fechamento otimizado para Lotofácil
             
             // Estratégia: Dividir os 25 números em blocos e combinar de forma sistemática
             const blocos = [
@@ -843,7 +859,7 @@
                 
                 // Verifica se o jogo é único
                 const hash = jogo.join('-');
-                if (!jogosFechamento.includes(hash)) {
+                if (!jogosFechamento.some(j => j.join('-') === hash)) {
                     jogosFechamento.push(jogo);
                 }
                 
@@ -858,7 +874,7 @@
                 jogo = todosNumeros.sort(() => Math.random() - 0.5).slice(0, 15).sort((a, b) => a - b);
                 
                 const hash = jogo.join('-');
-                if (!jogosFechamento.includes(hash)) {
+                if (!jogosFechamento.some(j => j.join('-') === hash)) {
                     jogosFechamento.push(jogo);
                 }
             }
@@ -872,6 +888,9 @@
             
             // Escolhe um dos jogos gerados pelo fechamento
             const jogoEscolhido = jogosFechamento[Math.floor(Math.random() * jogosFechamento.length)];
+            
+            // Armazena o jogo principal atual
+            jogoPrincipalAtual = [...jogoEscolhido].sort((a, b) => a - b);
             
             // Preenche os inputs com o jogo escolhido
             inputsList().forEach((input, idx) => {
@@ -892,6 +911,9 @@
             
             infoDiv.className = 'info-fechamento';
             gridInput.parentNode.insertBefore(infoDiv, gridInput.nextSibling);
+            
+            // Mostra legenda de cores
+            colorLegend.style.display = 'flex';
         }
 
         function limparInputs() {
@@ -903,9 +925,15 @@
                 input.style.borderColor = '#ddd';
             });
             
+            // Limpa jogo principal
+            jogoPrincipalAtual = [];
+            
             // Remove informação de fechamento
             const infoAntiga = document.querySelector('.info-fechamento');
             if (infoAntiga) infoAntiga.remove();
+            
+            // Esconde legenda de cores
+            colorLegend.style.display = 'none';
         }
 
         function limparHistorico() {
@@ -1006,6 +1034,9 @@
                 return;
             }
 
+            // Armazena o jogo principal atual
+            jogoPrincipalAtual = [...escolhidos].sort((a, b) => a - b);
+
             const todosNumeros = Array.from({length: 25}, (_, i) => i + 1);
             const naoEscolhidos = todosNumeros.filter(n => !escolhidos.includes(n));
             
@@ -1036,7 +1067,7 @@
                     const jogoContainer = document.createElement('div');
                     jogoContainer.className = 'jogo-container';
                     
-                    // Cria o header do jogo (AGORA SEPARADO)
+                    // Cria o header do jogo
                     const jogoHeader = document.createElement('div');
                     jogoHeader.className = 'jogo-header';
                     
@@ -1059,9 +1090,20 @@
                     const card = document.createElement('div');
                     card.className = 'card-jogo';
                     
+                    // Identifica quais números vieram do jogo principal (os 9 primeiros)
+                    const numerosDoPrincipal = new Set(sub9);
+                    
                     jogoFinal.forEach(n => {
                         const s = document.createElement('span');
                         s.className = 'num-badge';
+                        
+                        // Define a classe baseada na origem do número
+                        if (numerosDoPrincipal.has(n)) {
+                            s.classList.add('main-number'); // Número do jogo principal
+                        } else {
+                            s.classList.add('extra-number'); // Número extra
+                        }
+                        
                         s.innerText = n.toString().padStart(2, '0');
                         card.appendChild(s);
                     });
@@ -1080,6 +1122,9 @@
                 grupoWrapper.appendChild(corpo);
                 resultadoArea.prepend(grupoWrapper);
                 contadorGrupos++;
+                
+                // Mostra legenda de cores
+                colorLegend.style.display = 'flex';
                 
                 // Efeito de scroll suave para o novo grupo
                 window.scrollTo({ top: resultadoArea.offsetTop - 60, behavior: 'smooth' });
