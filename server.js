@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 
 // Serve jsPDF library
 app.get('/vendor/jspdf.umd.min.js', (req, res) => {
-  res.sendFile(path.join(__dirname, 'node_modules/jspdf/dist/jspdf.umd.min.js'));
+  res.sendFile(path.join(__dirname, 'vendor/jspdf.umd.min.js'));
 });
 
 // Serve static files from root directory

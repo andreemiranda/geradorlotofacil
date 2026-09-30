@@ -19,7 +19,7 @@
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/andreemiranda/geradorlotofacil">
+    <meta property="og:url" content="https://geradorlotofacil-mu.vercel.app/">
     <meta property="og:title" content="Lotofácil Pro – Gerador Inteligente de Jogos e Fechamento 15/9/9">
     <meta property="og:description" content="Desdobramento matemático 15/9/9=10 para Lotofácil. Volante interativo, estatísticas ao vivo de pares/ímpares, conferidor e suporte offline.">
     <meta property="og:site_name" content="Lotofácil Pro">
@@ -35,14 +35,14 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@andremiranda">
     <meta name="twitter:creator" content="@andremiranda">
-    <meta name="twitter:url" content="https://github.com/andreemiranda/geradorlotofacil">
+    <meta name="twitter:url" content="https://geradorlotofacil-mu.vercel.app/">
     <meta name="twitter:title" content="Lotofácil Pro – Gerador Inteligente de Jogos">
     <meta name="twitter:description" content="Maximize suas chances na Lotofácil com fechamento 15/9/9=10, volante digital 1 a 25 e estatísticas gratuitas.">
     <meta name="twitter:image" content="/images/pwa-banner.svg">
     <meta name="twitter:image:alt" content="Lotofácil Pro – Interface do Gerador de Jogos">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://github.com/andreemiranda/geradorlotofacil">
+    <link rel="canonical" href="https://geradorlotofacil-mu.vercel.app/">
     
     <!-- Configurações de Aplicativo (PWA) e Favicons SVG & PNG -->
     <meta name="theme-color" content="#93006C">
@@ -78,9 +78,9 @@
       "@graph": [
         {
           "@type": "WebApplication",
-          "@id": "https://github.com/andreemiranda/geradorlotofacil#webapp",
+          "@id": "https://geradorlotofacil-mu.vercel.app/#webapp",
           "name": "Lotofácil Pro",
-          "url": "https://github.com/andreemiranda/geradorlotofacil",
+          "url": "https://geradorlotofacil-mu.vercel.app/",
           "description": "Gerador inteligente de jogos para Lotofácil com desdobramento matemático 15/9/9=10, volante interativo e estatísticas.",
           "applicationCategory": ["UtilitiesApplication", "GameApplication"],
           "operatingSystem": "All",
@@ -108,7 +108,7 @@
         },
         {
           "@type": "FAQPage",
-          "@id": "https://github.com/andreemiranda/geradorlotofacil#faq",
+          "@id": "https://geradorlotofacil-mu.vercel.app/#faq",
           "mainEntity": [
             {
               "@type": "Question",
@@ -1020,6 +1020,38 @@
             .secondary-button, .btn-random { font-size: 12px; padding: 12px; }
             .metric-value { font-size: 11.5px; }
         }
+
+        /* Estilos de Impressão Direta */
+        .print-header { display: none; }
+        @media print {
+            .app-bar, .strategy-chips, .volante-card, .button-group, .conferir-card, .pwa-install-banner, .install-modal, .group-quick-actions, .jogo-actions, footer, #dropdown {
+                display: none !important;
+            }
+            body, .container {
+                background: #FFFFFF !important;
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .print-header {
+                display: block !important;
+                margin-bottom: 14px;
+                border-bottom: 2px solid #93006C;
+                padding-bottom: 8px;
+            }
+            .print-header h2 { margin: 0; color: #93006C; font-size: 18px; }
+            .print-header p { margin: 2px 0 0; color: #475569; font-size: 11px; }
+            .bloco-header {
+                background: #93006C !important;
+                color: #FFFFFF !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .num-badge {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1104,6 +1136,12 @@
     <!-- Conteúdo Principal -->
     <main class="container">
         
+        <!-- Cabeçalho Exclusivo para Impressão -->
+        <div class="print-header">
+            <h2>Lotofácil Pro – Fechamento Matemático 15/9/9</h2>
+            <p>Gerador oficial: <strong>geradorlotofacil-mu.vercel.app</strong></p>
+        </div>
+
         <!-- Chips de Estratégias Rápidas -->
         <div class="strategy-chips" aria-label="Estratégias Rápidas">
             <button class="chip-btn" onclick="preencherMaisFrequentes()">🔥 Mais Frequentes</button>
@@ -1742,7 +1780,7 @@
             jogos.forEach((j, idx) => {
                 texto += `*Jogo ${idx + 1}:* ${j.dataset.numeros}\n`;
             });
-            texto += "\nGerado no Lotofácil Pro: https://github.com/andreemiranda/geradorlotofacil";
+            texto += "\nGerado no Lotofácil Pro: https://geradorlotofacil-mu.vercel.app/";
             const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`;
             window.location.href = url;
         }
@@ -1757,7 +1795,7 @@
             jogos.forEach((j, idx) => {
                 texto += `*Jogo ${idx + 1}:* ${j.dataset.numeros}\n`;
             });
-            texto += "\nGerado no Lotofácil Pro: https://github.com/andreemiranda/geradorlotofacil";
+            texto += "\nGerado no Lotofácil Pro: https://geradorlotofacil-mu.vercel.app/";
             window.location.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`;
             toggleMenu();
         }
@@ -1820,7 +1858,10 @@
                 doc.text(`DATA: ${dataFormatada} • ${horaFormatada}`, 196, 12, { align: 'right' });
                 doc.setFont('helvetica', 'normal');
                 doc.text(`TOTAL: ${totalJogos} JOGOS (${pag + 1} de ${totalPaginas})`, 196, 18, { align: 'right' });
-                doc.text("github.com/andreemiranda/geradorlotofacil", 196, 24, { align: 'right' });
+                doc.setTextColor(254, 240, 138); // Destaque suave em tom dourado
+                doc.setFont('helvetica', 'bold');
+                doc.text("geradorlotofacil-mu.vercel.app", 196, 24, { align: 'right' });
+                doc.link(125, 20, 71, 5, { url: "https://geradorlotofacil-mu.vercel.app/" });
 
                 // 2. Card do Jogo Base
                 let startY = 34;
@@ -1983,7 +2024,8 @@
                 doc.setFont('helvetica', 'normal');
                 doc.setFontSize(7);
                 doc.setTextColor(100, 116, 139);
-                doc.text("Lotofácil Pro • Desenvolvido por André Miranda • Ferramenta Estatística de Apoio", 14, 287);
+                doc.text("Lotofácil Pro • geradorlotofacil-mu.vercel.app • Desenvolvido por André Miranda", 14, 287);
+                doc.link(14, 283, 110, 5, { url: "https://geradorlotofacil-mu.vercel.app/" });
                 doc.text(`Página ${pag + 1} de ${totalPaginas}`, 196, 287, { align: 'right' });
             }
 
@@ -2005,7 +2047,7 @@
             let textoExport = `LOTOFÁCIL PRO - Jogos Gerados com Fechamento 15/9/9\n`;
             textoExport += `Data: ${new Date().toLocaleDateString('pt-BR')}\n`;
             textoExport += `Horário: ${new Date().toLocaleTimeString('pt-BR')}\n`;
-            textoExport += `Site: https://github.com/andreemiranda/geradorlotofacil\n\n`;
+            textoExport += `Site: https://geradorlotofacil-mu.vercel.app/\n\n`;
 
             jogos.forEach((j, idx) => {
                 textoExport += `JOGO ${idx + 1}: ${j.dataset.numeros}\n`;

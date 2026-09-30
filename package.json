@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "echo 'Static app ready'",
+    "build": "mkdir -p vendor && cp node_modules/jspdf/dist/jspdf.umd.min.js vendor/jspdf.umd.min.js || true",
     "lint": "echo 'No lint errors'"
   },
   "dependencies": {

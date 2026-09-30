@@ -6,6 +6,8 @@
 ![PWA](https://img.shields.io/badge/PWA-5A0FC2?style=flat-square&logo=pwa&logoColor=white)
 
 > Um gerador inteligente de jogos para Lotofácil que utiliza desdobramento matemático para criar combinações estratégicas otimizadas.
+>
+> 🌐 **Acesso Online (Vercel):** [https://geradorlotofacil-mu.vercel.app/](https://geradorlotofacil-mu.vercel.app/)
 
 Desenvolvido por **André Miranda**
 
