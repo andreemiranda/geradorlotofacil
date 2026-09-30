@@ -1625,6 +1625,32 @@
             }).format(new Date());
         }
 
+        function obterTimestampArquivo() {
+            const agora = new Date();
+            const partes = new Intl.DateTimeFormat('pt-BR', {
+                timeZone: 'America/Sao_Paulo',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            }).formatToParts(agora);
+
+            const map = {};
+            partes.forEach(p => { map[p.type] = p.value; });
+
+            const ano = map.year || agora.getFullYear();
+            const mes = map.month || String(agora.getMonth() + 1).padStart(2, '0');
+            const dia = map.day || String(agora.getDate()).padStart(2, '0');
+            const hora = map.hour || String(agora.getHours()).padStart(2, '0');
+            const min = map.minute || String(agora.getMinutes()).padStart(2, '0');
+            const seg = map.second || String(agora.getSeconds()).padStart(2, '0');
+
+            return `${ano}-${mes}-${dia}-${hora}-${min}-${seg}`;
+        }
+
         // ALGORITMO DE FECHAMENTO 15/9/9 = 10
         function gerarJogos() {
             const escolhidos = Array.from(numerosSelecionados).sort((a, b) => a - b);
@@ -2032,9 +2058,10 @@
                 doc.text(`Página ${pag + 1} de ${totalPaginas}`, 196, 287, { align: 'right' });
             }
 
-            // Salva o PDF com nome personalizado e timestamp
-            const dataStr = new Date().toISOString().slice(0, 10);
-            doc.save(`lotofacil-pro-desdobramento-${dataStr}.pdf`);
+            // Salva o PDF com nome personalizado e timestamp no formato: lotofacil-pro-desdobramento-YYYY-MM-DD-hh-mm-ss.pdf
+            const timestamp = obterTimestampArquivo();
+            const nomeArquivoPDF = `lotofacil-pro-desdobramento-${timestamp}.pdf`;
+            doc.save(nomeArquivoPDF);
             alert("🎉 PDF oficial gerado e baixado com sucesso!");
             const drop = document.getElementById("dropdown");
             if (drop && drop.classList.contains('show')) drop.classList.remove('show');
@@ -2060,7 +2087,8 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `lotofacil-pro-jogos-${new Date().toISOString().slice(0,10)}.txt`;
+            const timestamp = obterTimestampArquivo();
+            a.download = `lotofacil-pro-jogos-${timestamp}.txt`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

@@ -1,5 +1,5 @@
-// Lotofácil Pro - Service Worker Offline Cache v5
-const CACHE_NAME = 'lotofacil-pro-v5';
+// Lotofácil Pro - Service Worker Offline Cache v6
+const CACHE_NAME = 'lotofacil-pro-v6';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
