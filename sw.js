@@ -1,19 +1,34 @@
-// Lotofácil Pro - Service Worker Offline Cache v6
-const CACHE_NAME = 'lotofacil-pro-v6';
+// Lotofácil Pro - Service Worker Offline Cache v7
+const CACHE_NAME = 'lotofacil-pro-v7';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
   '/vendor/jspdf.umd.min.js',
+  '/favicon.ico',
+  '/favicon.png',
+  '/favicon-32x32.png',
+  '/favicon-16x16.png',
+  '/apple-touch-icon.png',
+  '/android-chrome-192x192.png',
+  '/android-chrome-512x512.png',
   '/icon.svg',
   '/favicon.svg',
   '/images/icon.svg',
+  '/images/favicon.ico',
+  '/images/favicon.png',
+  '/images/favicon-32x32.png',
+  '/images/favicon-16x16.png',
+  '/images/apple-touch-icon.png',
+  '/images/android-chrome-192x192.png',
+  '/images/android-chrome-512x512.png',
+  '/images/gerador-loto-facil-og-logo.png',
+  '/images/gerador-loto-facil-og.png',
+  '/images/og-image.png',
   '/images/pwa-192x192.svg',
   '/images/pwa-512x512.svg',
   '/images/pwa-maskable.svg',
-  '/images/pwa-banner.svg',
-  '/images/gerador-loto-facil-og.png',
-  '/images/gerador-loto-facil-og-logo.png'
+  '/images/pwa-banner.svg'
 ];
 
 self.addEventListener('install', (event) => {
