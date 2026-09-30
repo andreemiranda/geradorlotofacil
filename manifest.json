@@ -1,0 +1,85 @@
+{
+  "id": "/",
+  "name": "Lotofácil Pro - Gerador Inteligente de Jogos",
+  "short_name": "Lotofácil",
+  "description": "Gerador inteligente de jogos para Lotofácil com desdobramento matemático 15/9/9=10, estatísticas e volante interativo.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f0f2f5",
+  "theme_color": "#93006C",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["entertainment", "games", "utilities"],
+  "icons": [
+    {
+      "src": "/images/pwa-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/gerador-loto-facil-og-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/pwa-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/gerador-loto-facil-og-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/pwa-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/pwa-screenshot-mobile.svg",
+      "sizes": "450x800",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "Volante Interativo e Gerador de Jogos para Lotofácil"
+    },
+    {
+      "src": "/images/pwa-screenshot-desktop.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Visão Geral dos Fechamentos e Estatísticas Lotofácil Pro"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Gerar Jogos",
+      "short_name": "Gerar",
+      "description": "Gerar combinações desdobradas da Lotofácil",
+      "url": "/#gerar",
+      "icons": [{ "src": "/images/pwa-192x192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Surpresinha Estratégica",
+      "short_name": "Surpresinha",
+      "description": "Preencher volante com números otimizados",
+      "url": "/#surpresinha",
+      "icons": [{ "src": "/images/pwa-192x192.svg", "sizes": "192x192" }]
+    }
+  ]
+}

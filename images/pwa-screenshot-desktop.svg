@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="scDeskBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#scDeskBg)"/>
+
+  <!-- Top bar -->
+  <rect width="1280" height="64" fill="#93006C"/>
+  <circle cx="48" cy="32" r="18" fill="#FFF"/>
+  <text x="48" y="39" font-family="'Montserrat'" font-size="16" font-weight="900" fill="#93006C" text-anchor="middle">15</text>
+  <text x="80" y="39" font-family="'Montserrat'" font-size="20" font-weight="800" fill="#FFF">Lotofácil Pro – Gerador Inteligente</text>
+
+  <!-- Left: interactive card -->
+  <g transform="translate(60, 100)">
+    <rect width="540" height="560" rx="24" fill="#FFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="270" y="45" font-family="'Montserrat'" font-size="18" font-weight="800" fill="#93006C" text-anchor="middle">VOLANTE INTERATIVO (1 A 25)</text>
+
+    <!-- 5x5 Grid -->
+    <g transform="translate(45, 80)" font-family="'Montserrat'" font-size="16" font-weight="800">
+      <circle cx="45" cy="40" r="30" fill="#93006C"/><text x="45" y="47" fill="#FFF" text-anchor="middle">01</text>
+      <circle cx="135" cy="40" r="30" fill="#93006C"/><text x="135" y="47" fill="#FFF" text-anchor="middle">02</text>
+      <circle cx="225" cy="40" r="30" fill="#FFF" stroke="#CBD5E1" stroke-width="2"/><text x="225" y="47" fill="#64748B" text-anchor="middle">03</text>
+      <circle cx="315" cy="40" r="30" fill="#93006C"/><text x="315" y="47" fill="#FFF" text-anchor="middle">04</text>
+      <circle cx="405" cy="40" r="30" fill="#93006C"/><text x="405" y="47" fill="#FFF" text-anchor="middle">05</text>
+
+      <circle cx="45" cy="115" r="30" fill="#93006C"/><text x="45" y="122" fill="#FFF" text-anchor="middle">06</text>
+      <circle cx="135" cy="115" r="30" fill="#FFF" stroke="#CBD5E1" stroke-width="2"/><text x="135" y="122" fill="#64748B" text-anchor="middle">07</text>
+      <circle cx="225" cy="115" r="30" fill="#93006C"/><text x="225" y="122" fill="#FFF" text-anchor="middle">08</text>
+      <circle cx="315" cy="115" r="30" fill="#93006C"/><text x="315" y="122" fill="#FFF" text-anchor="middle">09</text>
+      <circle cx="405" cy="115" r="30" fill="#93006C"/><text x="405" y="122" fill="#FFF" text-anchor="middle">10</text>
+
+      <circle cx="45" cy="190" r="30" fill="#93006C"/><text x="45" y="197" fill="#FFF" text-anchor="middle">11</text>
+      <circle cx="135" cy="190" r="30" fill="#93006C"/><text x="135" y="197" fill="#FFF" text-anchor="middle">12</text>
+      <circle cx="225" cy="190" r="30" fill="#93006C"/><text x="225" y="197" fill="#FFF" text-anchor="middle">13</text>
+      <circle cx="315" cy="190" r="30" fill="#FFF" stroke="#CBD5E1" stroke-width="2"/><text x="315" y="197" fill="#64748B" text-anchor="middle">14</text>
+      <circle cx="405" cy="190" r="30" fill="#93006C"/><text x="405" y="197" fill="#FFF" text-anchor="middle">15</text>
+
+      <circle cx="45" cy="265" r="30" fill="#FFF" stroke="#CBD5E1" stroke-width="2"/><text x="45" y="272" fill="#64748B" text-anchor="middle">16</text>
+      <circle cx="135" cy="265" r="30" fill="#93006C"/><text x="135" y="272" fill="#FFF" text-anchor="middle">17</text>
+      <circle cx="225" cy="265" r="30" fill="#FFF" stroke="#CBD5E1" stroke-width="2"/><text x="225" y="272" fill="#64748B" text-anchor="middle">18</text>
+      <circle cx="315" cy="265" r="30" fill="#93006C"/><text x="315" y="272" fill="#FFF" text-anchor="middle">19</text>
+      <circle cx="405" cy="265" r="30" fill="#93006C"/><text x="405" y="272" fill="#FFF" text-anchor="middle">20</text>
+
+      <circle cx="45" cy="340" r="30" fill="#FFF" stroke="#CBD5E1" stroke-width="2"/><text x="45" y="347" fill="#64748B" text-anchor="middle">21</text>
+      <circle cx="135" cy="340" r="30" fill="#93006C"/><text x="135" y="347" fill="#FFF" text-anchor="middle">22</text>
+      <circle cx="225" cy="340" r="30" fill="#93006C"/><text x="225" y="347" fill="#FFF" text-anchor="middle">23</text>
+      <circle cx="315" cy="340" r="30" fill="#FFF" stroke="#CBD5E1" stroke-width="2"/><text x="315" y="347" fill="#64748B" text-anchor="middle">24</text>
+      <circle cx="405" cy="340" r="30" fill="#93006C"/><text x="405" y="347" fill="#FFF" text-anchor="middle">25</text>
+    </g>
+
+    <!-- Buttons -->
+    <rect x="45" y="470" width="210" height="54" rx="16" fill="#E0AFFF"/>
+    <text x="150" y="504" font-family="'Montserrat'" font-size="15" font-weight="800" fill="#610047" text-anchor="middle">SURPRESINHA</text>
+    <rect x="285" y="470" width="210" height="54" rx="16" fill="#93006C"/>
+    <text x="390" y="504" font-family="'Montserrat'" font-size="15" font-weight="800" fill="#FFF" text-anchor="middle">GERAR JOGOS</text>
+  </g>
+
+  <!-- Right: Generated combinations & Stats -->
+  <g transform="translate(640, 100)">
+    <rect width="580" height="560" rx="24" fill="#FFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect width="580" height="54" rx="24" fill="#93006C"/>
+    <rect y="24" width="580" height="30" fill="#93006C"/>
+    <text x="290" y="35" font-family="'Montserrat'" font-size="16" font-weight="800" fill="#FFF" text-anchor="middle">JOGOS GERADOS COM DESDOBRAMENTO 15/9/9</text>
+
+    <!-- Games list -->
+    <g transform="translate(30, 80)" font-family="'Montserrat'">
+      <text x="0" y="20" font-size="14" font-weight="800" fill="#93006C">JOGO 1</text>
+      <g transform="translate(0, 30)">
+        <rect width="520" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text x="260" y="26" font-size="15" font-weight="700" fill="#1E293B" text-anchor="middle">01 02 04 05 06 08 09 11 12 13 15 17 20 22 25</text>
+      </g>
+
+      <text x="0" y="110" font-size="14" font-weight="800" fill="#93006C">JOGO 2</text>
+      <g transform="translate(0, 120)">
+        <rect width="520" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text x="260" y="26" font-size="15" font-weight="700" fill="#1E293B" text-anchor="middle">01 03 04 06 07 08 10 11 14 15 17 19 22 23 25</text>
+      </g>
+
+      <text x="0" y="200" font-size="14" font-weight="800" fill="#93006C">JOGO 3</text>
+      <g transform="translate(0, 210)">
+        <rect width="520" height="42" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text x="260" y="26" font-size="15" font-weight="700" fill="#1E293B" text-anchor="middle">02 04 05 08 09 11 12 13 15 16 18 20 21 23 24</text>
+      </g>
+    </g>
+
+    <g transform="translate(50, 420)">
+      <rect width="480" height="90" rx="16" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+      <text x="240" y="32" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#93006C" text-anchor="middle">ESTATÍSTICAS DA COMBINAÇÃO</text>
+      <text x="240" y="62" font-family="'Montserrat'" font-size="13" font-weight="600" fill="#4B5563" text-anchor="middle">8 Ímpares • 7 Pares • 5 Primos • 10 Moldura • Soma 195</text>
+    </g>
+  </g>
+</svg>

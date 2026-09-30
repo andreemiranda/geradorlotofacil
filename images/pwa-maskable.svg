@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="maskBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A21CAF"/>
+      <stop offset="50%" stop-color="#93006C"/>
+      <stop offset="100%" stop-color="#4A0037"/>
+    </linearGradient>
+    <linearGradient id="maskSphere" x1="25%" y1="20%" x2="80%" y2="85%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#F5D0FE"/>
+      <stop offset="60%" stop-color="#C026D3"/>
+      <stop offset="100%" stop-color="#6B004F"/>
+    </linearGradient>
+    <linearGradient id="maskGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed background (no rx so Android can safely clip into any mask shape) -->
+  <rect width="512" height="512" fill="url(#maskBg)"/>
+
+  <!-- Safe Zone centered group (scale inside 75% safe area) -->
+  <g transform="translate(256 256) scale(0.72) translate(-256 -256)">
+    <!-- Glow -->
+    <circle cx="256" cy="220" r="190" fill="#F472B6" fill-opacity="0.3"/>
+
+    <!-- Stars -->
+    <path d="M256 45 L263 65 L284 66 L267 80 L273 100 L256 88 L239 100 L245 80 L228 66 L249 65 Z" fill="url(#maskGold)"/>
+    <path d="M400 120 L405 133 L419 134 L408 143 L412 157 L400 148 L388 157 L392 143 L381 134 L395 133 Z" fill="url(#maskGold)" opacity="0.9"/>
+    <path d="M112 360 L117 373 L131 374 L120 383 L124 397 L112 388 L100 397 L104 383 L93 374 L107 373 Z" fill="url(#maskGold)" opacity="0.9"/>
+
+    <!-- Lottery Sphere -->
+    <circle cx="256" cy="245" r="140" fill="url(#maskSphere)"/>
+    <circle cx="256" cy="245" r="100" fill="#FFFFFF"/>
+    <circle cx="256" cy="245" r="90" fill="none" stroke="#93006C" stroke-width="4" stroke-dasharray="10 6"/>
+    <text x="256" y="278" font-family="'Montserrat', -apple-system, sans-serif" font-size="94" font-weight="900" fill="#93006C" text-anchor="middle" letter-spacing="-3">15</text>
+    <ellipse cx="205" cy="165" rx="50" ry="28" transform="rotate(-32 205 165)" fill="#FFFFFF" fill-opacity="0.5"/>
+
+    <!-- Bottom Badge -->
+    <rect x="156" y="388" width="200" height="54" rx="27" fill="url(#maskGold)"/>
+    <text x="256" y="424" font-family="'Montserrat', -apple-system, sans-serif" font-size="26" font-weight="900" fill="#451A03" text-anchor="middle" letter-spacing="3">LOTOFÁCIL</text>
+  </g>
+</svg>

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A0037"/>
+      <stop offset="40%" stop-color="#93006C"/>
+      <stop offset="100%" stop-color="#210018"/>
+    </linearGradient>
+    <linearGradient id="ogGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="ogShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+
+  <!-- Subtle circles pattern -->
+  <g opacity="0.08" fill="#FFFFFF">
+    <circle cx="150" cy="120" r="180"/>
+    <circle cx="1050" cy="500" r="260"/>
+    <circle cx="600" cy="650" r="300"/>
+  </g>
+
+  <!-- Left Content: Branding, Badges & Copy -->
+  <g transform="translate(80, 85)">
+    <!-- Pill Badge -->
+    <rect x="0" y="0" width="310" height="42" rx="21" fill="url(#ogGold)"/>
+    <text x="155" y="27" font-family="'Montserrat', sans-serif" font-size="16" font-weight="900" fill="#451A03" text-anchor="middle" letter-spacing="2">DESDOBRAMENTO 15/9/9=10</text>
+
+    <!-- Main Title -->
+    <text x="0" y="115" font-family="'Montserrat', sans-serif" font-size="64" font-weight="900" fill="#FFFFFF" letter-spacing="-1">LOTOFÁCIL PRO</text>
+    <text x="0" y="165" font-family="'Montserrat', sans-serif" font-size="28" font-weight="700" fill="#E0AFFF">Gerador Inteligente &amp; Estratégico</text>
+
+    <!-- Bullets -->
+    <g transform="translate(0, 215)" font-family="'Montserrat', sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">
+      <circle cx="14" cy="6" r="6" fill="#F59E0B"/>
+      <text x="32" y="13">Fechamentos matemáticos comprovados</text>
+      
+      <circle cx="14" cy="46" r="6" fill="#F59E0B"/>
+      <text x="32" y="53">Volante interativo com estatísticas em tempo real</text>
+      
+      <circle cx="14" cy="86" r="6" fill="#F59E0B"/>
+      <text x="32" y="93">Funciona 100% offline direto no seu celular ou PC</text>
+    </g>
+
+    <!-- Author & URL Badge -->
+    <g transform="translate(0, 365)">
+      <rect x="0" y="0" width="460" height="54" rx="16" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5"/>
+      <text x="24" y="34" font-family="'Montserrat', sans-serif" font-size="17" font-weight="700" fill="#FFFFFF">github.com/andreemiranda/geradorlotofacil</text>
+    </g>
+  </g>
+
+  <!-- Right Visual: App Mockup Card & Lucky Sphere -->
+  <g transform="translate(730, 75)" filter="url(#ogShadow)">
+    <!-- Simulated App Frame -->
+    <rect x="0" y="0" width="390" height="480" rx="32" fill="url(#cardGrad)"/>
+    <rect x="0" y="0" width="390" height="70" rx="32" fill="#93006C"/>
+    <rect x="0" y="40" width="390" height="30" fill="#93006C"/>
+    
+    <text x="195" y="44" font-family="'Montserrat', sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">LOTOFÁCIL PRO</text>
+
+    <!-- Mini balls row -->
+    <g transform="translate(30, 95)">
+      <circle cx="20" cy="20" r="18" fill="#93006C"/><text x="20" y="26" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#FFF" text-anchor="middle">01</text>
+      <circle cx="65" cy="20" r="18" fill="#93006C"/><text x="65" y="26" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#FFF" text-anchor="middle">03</text>
+      <circle cx="110" cy="20" r="18" fill="#93006C"/><text x="110" y="26" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#FFF" text-anchor="middle">07</text>
+      <circle cx="155" cy="20" r="18" fill="#93006C"/><text x="155" y="26" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#FFF" text-anchor="middle">10</text>
+      <circle cx="200" cy="20" r="18" fill="#93006C"/><text x="200" y="26" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#FFF" text-anchor="middle">15</text>
+      <circle cx="245" cy="20" r="18" fill="#93006C"/><text x="245" y="26" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#FFF" text-anchor="middle">18</text>
+      <circle cx="290" cy="20" r="18" fill="#93006C"/><text x="290" y="26" font-family="'Montserrat'" font-size="14" font-weight="800" fill="#FFF" text-anchor="middle">25</text>
+    </g>
+
+    <!-- Generated Game Card Simulation -->
+    <g transform="translate(25, 160)">
+      <rect x="0" y="0" width="340" height="150" rx="18" fill="#FDF4FF" stroke="#C026D3" stroke-width="2"/>
+      <text x="20" y="30" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#93006C">JOGO 1 - 15 NÚMEROS</text>
+      
+      <!-- Ball badges -->
+      <g transform="translate(18, 50)" font-family="'Montserrat', sans-serif" font-size="13" font-weight="800">
+        <rect x="0" y="0" width="34" height="34" rx="10" fill="#93006C"/><text x="17" y="22" fill="#FFF" text-anchor="middle">01</text>
+        <rect x="42" y="0" width="34" height="34" rx="10" fill="#93006C"/><text x="59" y="22" fill="#FFF" text-anchor="middle">04</text>
+        <rect x="84" y="0" width="34" height="34" rx="10" fill="#93006C"/><text x="101" y="22" fill="#FFF" text-anchor="middle">08</text>
+        <rect x="126" y="0" width="34" height="34" rx="10" fill="#93006C"/><text x="143" y="22" fill="#FFF" text-anchor="middle">11</text>
+        <rect x="168" y="0" width="34" height="34" rx="10" fill="#93006C"/><text x="185" y="22" fill="#FFF" text-anchor="middle">13</text>
+        <rect x="210" y="0" width="34" height="34" rx="10" fill="#E0AFFF"/><text x="227" y="22" fill="#610047" text-anchor="middle">17</text>
+        <rect x="252" y="0" width="34" height="34" rx="10" fill="#E0AFFF"/><text x="269" y="22" fill="#610047" text-anchor="middle">21</text>
+        
+        <rect x="0" y="44" width="34" height="34" rx="10" fill="#93006C"/><text x="17" y="66" fill="#FFF" text-anchor="middle">02</text>
+        <rect x="42" y="44" width="34" height="34" rx="10" fill="#93006C"/><text x="59" y="66" fill="#FFF" text-anchor="middle">06</text>
+        <rect x="84" y="44" width="34" height="34" rx="10" fill="#93006C"/><text x="101" y="66" fill="#FFF" text-anchor="middle">10</text>
+        <rect x="126" y="44" width="34" height="34" rx="10" fill="#93006C"/><text x="143" y="66" fill="#FFF" text-anchor="middle">14</text>
+        <rect x="168" y="44" width="34" height="34" rx="10" fill="#E0AFFF"/><text x="185" y="66" fill="#610047" text-anchor="middle">19</text>
+        <rect x="210" y="44" width="34" height="34" rx="10" fill="#E0AFFF"/><text x="227" y="66" fill="#610047" text-anchor="middle">23</text>
+        <rect x="252" y="44" width="34" height="34" rx="10" fill="#E0AFFF"/><text x="269" y="66" fill="#610047" text-anchor="middle">24</text>
+      </g>
+    </g>
+
+    <!-- Action button -->
+    <rect x="40" y="340" width="310" height="52" rx="18" fill="#93006C"/>
+    <text x="195" y="372" font-family="'Montserrat', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">GERAR 10 JOGOS DESDOBRADOS</text>
+
+    <!-- Verification badge -->
+    <g transform="translate(60, 415)">
+      <circle cx="12" cy="12" r="12" fill="#10B981"/>
+      <path d="M7 12 L11 16 L17 9" stroke="#FFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text x="32" y="17" font-family="'Montserrat', sans-serif" font-size="13" font-weight="700" fill="#15803D">Fechamento Matemático Ativo</text>
+    </g>
+  </g>
+</svg>

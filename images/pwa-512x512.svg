@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C026D3"/>
+      <stop offset="45%" stop-color="#93006C"/>
+      <stop offset="100%" stop-color="#4A0037"/>
+    </linearGradient>
+    <linearGradient id="sphere512" x1="25%" y1="20%" x2="80%" y2="85%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#F5D0FE"/>
+      <stop offset="60%" stop-color="#C026D3"/>
+      <stop offset="100%" stop-color="#6B004F"/>
+    </linearGradient>
+    <linearGradient id="gold512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <radialGradient id="glow512" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#F472B6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#93006C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg512)"/>
+  <circle cx="256" cy="220" r="210" fill="url(#glow512)"/>
+
+  <!-- Stars -->
+  <path d="M256 50 L262 67 L281 68 L266 80 L271 98 L256 88 L241 98 L246 80 L231 68 L250 67 Z" fill="url(#gold512)"/>
+  <path d="M410 130 L414 142 L427 143 L416 152 L420 165 L410 157 L400 165 L404 152 L393 143 L406 142 Z" fill="url(#gold512)" opacity="0.9"/>
+  <path d="M102 360 L106 372 L119 373 L108 382 L112 395 L102 387 L92 395 L96 382 L85 373 L98 372 Z" fill="url(#gold512)" opacity="0.9"/>
+
+  <!-- Main Ball -->
+  <circle cx="256" cy="245" r="145" fill="url(#sphere512)"/>
+  <circle cx="256" cy="245" r="102" fill="#FFFFFF"/>
+  <circle cx="256" cy="245" r="92" fill="none" stroke="#93006C" stroke-width="4" stroke-dasharray="10 6"/>
+  <text x="256" y="278" font-family="'Montserrat', -apple-system, sans-serif" font-size="94" font-weight="900" fill="#93006C" text-anchor="middle" letter-spacing="-3">15</text>
+  <ellipse cx="205" cy="165" rx="55" ry="32" transform="rotate(-32 205 165)" fill="#FFFFFF" fill-opacity="0.5"/>
+
+  <!-- Bottom Ribbon -->
+  <rect x="156" y="388" width="200" height="56" rx="28" fill="url(#gold512)"/>
+  <text x="256" y="425" font-family="'Montserrat', -apple-system, sans-serif" font-size="28" font-weight="900" fill="#451A03" text-anchor="middle" letter-spacing="4">LOTOFÁCIL PRO</text>
+</svg>
